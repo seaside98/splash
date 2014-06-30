@@ -63,7 +63,7 @@ $(document).ready(function() {
 		} //meta success
 	); //meta ajax
 
-	if (desktop) {
+	/*if (desktop) {
 		$(window).scroll(function() {
 			var diffToTop = $(this).scrollTop();
 			var diffToBottom = $(document).height() - ($(this).scrollTop() + $(this).height());
@@ -75,7 +75,19 @@ $(document).ready(function() {
 				$("#wiki-nav-bottom").css("opacity", (100 - diffToBottom) / 100);
 			}
 		}); //move background images
-	}
+	}*/
+	var $hero = $('#hero .section-background');
+	var $about = $('#blue-container .section-background');
+	var $updates = $('#red-container .section-background');
+	var $contribute = $('#white-container .section-background');
+
+	$(window).scroll(function(){
+		var diffToTop = $(this).scrollTop();
+		$hero.css('transform', 'translateY(' + parseInt(-diffToTop / 5, 10) + 'px)');
+		$about.css('transform', 'translateY(' + parseInt(-diffToTop / 5, 10) + 'px)');
+		$updates.css('transform', 'translateY(' + ( 150 + parseInt(-diffToTop / 5, 10) ) + 'px)');
+		$contribute.css('transform', 'translateY(' + ( 300 + parseInt(-diffToTop / 5, 10) ) + 'px)');
+	})
 });
 
 function checkImages() {

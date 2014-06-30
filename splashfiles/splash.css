@@ -113,11 +113,26 @@ ul {
 #hero {
 	width: 100%;
 	height: 100%;
+	padding: 50px 0 125px 0;
+	position: relative;
+}
+
+#hero .section-background {
 	background: url("hero.jpg") no-repeat fixed;
+}
+
+#hero .section-background,
+#blue-container .section-background,
+#red-container .section-background,
+#white-container .section-background {
+	width: 100%;
+	height: 150%;
 	background-size: cover;
 	background-position: center 0;
-	padding: 50px 0 125px 0;
-	background-color: #419ec8;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	position: absolute;
 }
 
 #hero header {
@@ -223,10 +238,12 @@ ul {
 }
 
 #blue-container {
+	position: relative;
+	z-index: 1;
+}
+
+#blue-container .section-background {
 	background: url("about.jpg") no-repeat fixed;
-	background-position: center 0;
-	background-size: auto 150%;
-	background-color: #419ec8;
 }
 
 #circles {
@@ -291,20 +308,23 @@ ul {
 }
 
 #red-container {
+	position: relative;
+	z-index: 1;
+}
+
+#red-container .section-background {
 	background: url("updates.jpg") no-repeat fixed;
-	background-position: center 0;
-	background-size: auto 150%;
-	color: #fff;
-	background-color: #419ec8;
 }
 
 #white-container {
-	background: url("contribute.jpg") no-repeat fixed;
-	background-position: center 0;
-	background-size: auto 150%;
+	position: relative;
 	color: #000;
 	padding-bottom: 0;
-	background-color: #419ec8;
+	z-index: 1;
+}
+
+#white-container .section-background {
+	background: url("contribute.jpg") no-repeat fixed;
 }
 
 #white-container a {
@@ -369,7 +389,7 @@ footer {
 	li {
 		margin-top: 1em;
 	}
-	
+
 	/* !importants are needed to override javascript */
 
 	#hero,
@@ -394,7 +414,7 @@ footer {
 	#social {
 		padding-bottom: 2em;
 	}
-	
+
 	#social-links a:hover{
 		opacity: .5;
 	}
@@ -411,13 +431,13 @@ footer {
 		-webkit-transition: color .15s, opacity .15s, right .5s;
 		transition: color .15s, opacity .15s, right .5s;
 	}
-	
+
 	.wiki-nav-item {
 		-moz-transition: all .25s;
 		-webkit-transition: all .25s;
 		transition: all .25s;
 	}
-	
+
 	#social-links img {
 		position: relative;
 		bottom: 0;
@@ -425,7 +445,7 @@ footer {
 		-webkit-transition: bottom .2s;
 		transition: bottom .2s;
 	}
-	
+
 	#social-links a:hover img {
 		bottom: 10px;
 	}
@@ -478,7 +498,7 @@ footer {
 		width: 100%;
 		margin-right: -80px;
 	}
-	
+
 	#logoInner {
 		width: auto;
 		margin-right: 90px;
